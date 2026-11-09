@@ -1,0 +1,7 @@
+name = "drip-client-admin-api"
+main = "worker.js"
+compatibility_date = "2026-11-10"
+
+[[kv_namespaces]]
+binding = "SECRETS"
+id = "GANTI_DENGAN_KV_NAMESPACE_ID"

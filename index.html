@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b12"><title>Drip Client — Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><div class="brand"><span class="mark">D</span><div><b>DRIP CLIENT</b><small>PRODUCT STORE</small></div></div><span class="status"><i></i> SYSTEM ONLINE</span></header>
+    <section id="loginView" class="login card">
+      <div class="avatar-wrap"><img id="loginAvatar" src="https://api.dicebear.com/9.x/initials/svg?seed=Admin&backgroundColor=171c2b" alt="Admin"></div>
+      <p class="eyebrow">ADMIN ACCESS</p><h1>Welcome back</h1><p class="muted">Masuk untuk mengelola toko Drip Client.</p>
+      <form id="loginForm"><label>Email admin</label><input id="email" type="email" autocomplete="username" placeholder="email admin" required><label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password admin" required><button class="primary" type="submit">LOGIN ADMIN <span>→</span></button><p id="loginError" class="error"></p></form>
+      <p class="tiny">Akses admin dilindungi oleh backend.</p>
+    </section>
+    <section id="adminView" class="hidden">
+      <div class="welcome card"><div class="profile"><img id="adminAvatar" src="https://api.dicebear.com/9.x/initials/svg?seed=Admin&backgroundColor=171c2b" alt="Foto admin"><div><p class="eyebrow">DASHBOARD</p><h1>Admin Panel</h1><p class="muted">Kelola API dan katalog produk.</p></div></div><button id="logout" class="ghost">Keluar</button></div>
+      <div class="grid">
+        <section class="card"><div class="section-head"><div><p class="eyebrow">PROFILE</p><h2>Foto Admin</h2></div><span class="chip">ADMIN</span></div><p class="muted">Pilih foto profil yang tampil di panel ini.</p><input id="avatarFile" type="file" accept="image/*"><p class="tiny">Foto disimpan di perangkat/browser ini.</p></section>
+        <section class="card"><div class="section-head"><div><p class="eyebrow">API CONNECTION</p><h2>Drip API Key</h2></div><span id="apiState" class="chip">BELUM DICEK</span></div><p class="muted">API key disimpan di backend, bukan di GitHub atau browser.</p><form id="keyForm"><label>API Key Drip</label><input id="apiKey" type="password" placeholder="drip_sk_test_... atau drip_sk_live_..." autocomplete="off" required><button class="primary" type="submit">SIMPAN API KEY</button></form><p id="keyMessage" class="tiny"></p><button id="checkApi" class="ghost">Tes koneksi API</button></section>
+      </div>
+      <section class="card catalog"><div class="section-head"><div><p class="eyebrow">LIVE CATALOG</p><h2>Semua Produk</h2><p class="muted">Nama, harga, dan stok diambil langsung dari Drip API.</p></div><button id="refresh" class="ghost">↻ Muat ulang</button></div><div id="catalogMessage" class="muted">Tekan “Muat ulang” untuk mengambil katalog.</div><div class="table-wrap"><table><thead><tr><th>PRODUK</th><th>SKU</th><th>HARGA</th><th>STOK</th><th>STATUS</th></tr></thead><tbody id="products"></tbody></table></div></section>
+      <p class="tiny foot">Drip Client • Data harga mengikuti respons API Drip. Pastikan hak akses dan ketentuan API Anda.</p>
+    </section>
+  </main><script src="app.js"></script>
+</body></html>
